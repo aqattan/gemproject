@@ -1,41 +1,15 @@
-<%= form_for(@form) do |f| %>
-  <% if @form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@form.errors.count, "error") %> prohibited this form from being saved:</h2>
-
-      <ul>
-      <% @form.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= semantic_form_for @form do |f| %>
+  <%= f.semantic_errors %>
+  <%= f.inputs do %>
+    <%= f.input :name,   :hint => "Enter your name" %>
+    <%= f.input :address, :hint => "Enter your address" %>
+    <%= f.input :date, :hint =>"Select the date" %> 
+    <%= f.input :time, :hint =>"Select the time"%>
+    <%= f.input :comment, :hint =>"Enter any comment"%>
+    <%= f.input :public, :hint =>"Please Check if you would like to make your comment public to all?"%>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :time %><br>
-    <%= f.time_select :time %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
-  </div>
-  <div class="field">
-    <%= f.label :public %><br>
-    <%= f.check_box :public %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  <%= f.submit do %>
+    <%= f.submit :button_html => {:class => "primary"} %>
+  <% end %>
 <% end %>
