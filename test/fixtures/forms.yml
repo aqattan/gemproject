@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  date: 2016-12-30
+  time: 2016-12-30 01:18:30
+  comment: MyText
+  public: false
+
+two:
+  name: MyString
+  address: MyString
+  date: 2016-12-30
+  time: 2016-12-30 01:18:30
+  comment: MyText
+  public: false
